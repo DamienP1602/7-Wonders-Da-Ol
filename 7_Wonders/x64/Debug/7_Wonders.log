@@ -1,12 +1,4 @@
 ﻿  ClassicBall.cpp
-  CollisionComponent.cpp
-  Entity.cpp
-  EntityManager.cpp
-  Game.cpp
-  InputManager.cpp
-  Main.cpp
-  Map.cpp
-  MapManager.cpp
   MovementComponent.cpp
   SpecialBall.cpp
   Generating Code...
