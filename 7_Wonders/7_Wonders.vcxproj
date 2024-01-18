@@ -154,6 +154,7 @@
     <ClInclude Include="Map.h" />
     <ClInclude Include="MapManager.h" />
     <ClInclude Include="MovementComponent.h" />
+    <ClInclude Include="Singleton.h" />
     <ClInclude Include="SpecialBall.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
