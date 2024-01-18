@@ -1,6 +1,17 @@
 #pragma once
+
+template <typename Class>
 class Singleton
 {
+	static Class instance;
+
+public:
+	static Class GetInstance()
+	{
+		return instance;
+	}
 };
 
-//la bite
+template <typename Class>
+Class Singleton<Class>::instance;
+

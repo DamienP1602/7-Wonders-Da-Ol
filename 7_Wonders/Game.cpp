@@ -49,7 +49,13 @@ void Game::Update()
 
 		window.clear();
 
-		//window.draw();
+		for (vector<Case*>& _balls : map->GetAllMap())
+		{
+			for (Case* _ball : _balls)
+			{
+				window.draw(*_ball->GetShape());
+			}
+		}
 
 		window.display();
 	}
