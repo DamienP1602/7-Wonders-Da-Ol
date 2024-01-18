@@ -135,20 +135,9 @@
   <ItemGroup>
     <ClCompile Include="ClassicBall.cpp" />
     <ClCompile Include="CollisionComponent.cpp" />
-<<<<<<< HEAD
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="EntityManager.cpp" />
     <ClCompile Include="Game.cpp" />
-<<<<<<< HEAD
-=======
-    <ClCompile Include="InputManager.cpp" />
-=======
-    <ClCompile Include="CollisionReactions.cpp" />
-    <ClCompile Include="Entity.cpp" />
-    <ClCompile Include="EntityManager.cpp" />
-    <ClCompile Include="Game.cpp" />
->>>>>>> Damien-branch
->>>>>>> main
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MapManager.cpp" />
@@ -158,10 +147,6 @@
   <ItemGroup>
     <ClInclude Include="ClassicBall.h" />
     <ClInclude Include="CollisionComponent.h" />
-<<<<<<< HEAD
-=======
-    <ClInclude Include="CollisionReactions.h" />
->>>>>>> Damien-branch
     <ClInclude Include="Entity.h" />
     <ClInclude Include="EntityManager.h" />
     <ClInclude Include="Game.h" />

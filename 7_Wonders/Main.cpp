@@ -6,7 +6,6 @@ using namespace sf;
 
 int main()
 {
-<<<<<<< HEAD
 	Game _game;
 
 	_game.Start();
@@ -15,26 +14,3 @@ int main()
 	
 	return 0;
 }
-=======
-<<<<<<< HEAD
-	
-}
-=======
-
-}
-
-//Singleton
-//EntityManager
-
-//MapManager
-
-//InputManager
-//MovementComponent
-
-//CollisionReaction
-//CollisionComponent
-
-
-
->>>>>>> Damien-branch
->>>>>>> main
