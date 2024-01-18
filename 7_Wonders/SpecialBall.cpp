@@ -3,7 +3,7 @@
 SpecialBall::SpecialBall() : Entity(ENTITY_SPECIAL)
 {
 	shape = new CircleShape();
-	
+	//TODO
 	movement = new MovementComponent();
 	collision = new CollisionComponent();
 }
@@ -11,7 +11,7 @@ SpecialBall::SpecialBall() : Entity(ENTITY_SPECIAL)
 SpecialBall::SpecialBall(CircleShape* _shape) : Entity(ENTITY_SPECIAL)
 {
 	shape = _shape;
-
+	//TODO
 	movement = new MovementComponent();
 	collision = new CollisionComponent();
 }
@@ -28,7 +28,7 @@ void SpecialBall::Move()
 	//TODO
 }
 
-void SpecialBall::ExecuteCallback()
+void SpecialBall::ExecuteCallback(Event _event)
 {
 	//TODO
 }

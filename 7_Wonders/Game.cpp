@@ -39,6 +39,11 @@ void Game::Update()
 				/*cout << _event.mouseMove.x << endl;
 				cout << _event.mouseMove.y << endl;*/
 			}
+
+			for (InputManager* _manager : inputManager)
+			{
+				_manager->ExecuteCallback(_event);
+			}
 		}
 
 

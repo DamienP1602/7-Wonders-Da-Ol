@@ -16,7 +16,9 @@ public:
 
 public:
 	void Move();
-	void ExecuteCallback();
+
+public:
+	virtual void ExecuteCallback(Event _event) override;
 
 };
 
