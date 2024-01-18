@@ -77,9 +77,6 @@
     <ClInclude Include="Game.h">
       <Filter>Source Files\Game</Filter>
     </ClInclude>
-    <ClInclude Include="Singleton.h">
-      <Filter>Source Files\Managers</Filter>
-    </ClInclude>
     <ClInclude Include="MapManager.h">
       <Filter>Source Files\Managers</Filter>
     </ClInclude>
