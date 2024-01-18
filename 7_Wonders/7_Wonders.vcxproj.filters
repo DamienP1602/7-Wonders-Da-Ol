@@ -51,9 +51,12 @@
     <ClCompile Include="EntityManager.cpp">
       <Filter>Source Files\Managers</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="InputManager.cpp">
       <Filter>Source Files\Managers</Filter>
     </ClCompile>
+=======
+>>>>>>> Damien-branch
     <ClCompile Include="MapManager.cpp">
       <Filter>Source Files\Managers</Filter>
     </ClCompile>
@@ -63,6 +66,12 @@
     <ClCompile Include="MovementComponent.cpp">
       <Filter>Source Files\Components</Filter>
     </ClCompile>
+<<<<<<< HEAD
+=======
+    <ClCompile Include="CollisionReactions.cpp">
+      <Filter>Source Files\Managers</Filter>
+    </ClCompile>
+>>>>>>> Damien-branch
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Map.h">
@@ -98,5 +107,11 @@
     <ClInclude Include="MovementComponent.h">
       <Filter>Source Files\Components</Filter>
     </ClInclude>
+<<<<<<< HEAD
+=======
+    <ClInclude Include="CollisionReactions.h">
+      <Filter>Source Files\Managers</Filter>
+    </ClInclude>
+>>>>>>> Damien-branch
   </ItemGroup>
 </Project>
