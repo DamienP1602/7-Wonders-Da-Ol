@@ -22,7 +22,8 @@ class Game
 	Vector2f windowSize;
 	Texture* texture;
 
-	vector<Case*> entitiesToSwap;
+	Case* case1ToSwap;
+	Case* case2ToSwap;
 
 	vector<Drawable*> drawables;
 
@@ -35,6 +36,6 @@ public:
 	void Update();
 	void Stop();
 
-	void TryToSwap(vector<Case*>& _entities);
+	void TryToSwap(Case* _case1, Case* _case2);
 };
 

@@ -2,10 +2,9 @@
 
 Map::Map() : MapManager()
 {
-	Init();
 }
 
-void Map::Init()
+vector<vector<Case*>> Map::Init()
 {
 	cases = vector<vector<Case*>>(8);
 
@@ -21,7 +20,7 @@ void Map::Init()
 		_x = 50.0f;
 		for (int _i2 = 0; _i2 < _gridY; _i2++)
 		{
-			_random = rand() % 4 + 0;
+			_random = rand() % 5 + 0;
 			Case* _newCase = new Case(new Entity(ENTITY_CLASSIC, new CircleShape(40.0f), GetColorOnInt(_random)), Vector2f(_x, _y), _id);
 			_id++;
 			cases[_i].push_back(_newCase);
@@ -29,4 +28,5 @@ void Map::Init()
 		}
 			_y += 100.0f;
 	}
+	return cases;
 }

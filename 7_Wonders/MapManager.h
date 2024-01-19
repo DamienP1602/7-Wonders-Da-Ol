@@ -24,10 +24,12 @@ public:
 
 	Case* Selection(const Vector2i _mousePosition, vector<vector<Case*>> _allCases) const;
 
-	bool notNullptr(vector<Case*> _entities);
+	bool notNullptr(Case* _case1, Case* _case2);
 
-	bool isNear(vector<Case*> _entities);
+	bool isNear(Case* _case1, Case* _case2);
 
-	void Swap(vector<Case*>& _balls);
+	void Swap(Case* _case1, Case* _case2);
+
+
 };
 

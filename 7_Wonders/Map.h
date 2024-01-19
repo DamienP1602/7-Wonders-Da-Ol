@@ -4,16 +4,16 @@
 #include "Singleton.h"
 #include <vector>
 
-class Map : public MapManager
+class Map : public MapManager, public Singleton<Map>
 {
 	vector<vector<Case*>> cases;
 
 public:
 	Map();
-	void Init();
+	vector<vector<Case*>> Init();
 
 public:
-	vector<vector<Case*>> GetAllMap() const
+	vector<vector<Case*>> GetAllMap()
 	{
 		return cases;
 	}

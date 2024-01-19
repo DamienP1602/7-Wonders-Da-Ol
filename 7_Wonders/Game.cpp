@@ -10,7 +10,9 @@ Game::Game()
 
 	texture = new Texture();
 
-	entitiesToSwap = vector<Case*>();
+	case1ToSwap = new Case();
+	case2ToSwap = new Case();
+
 	windowSize = Vector2f(1920.0f, 1080.0f);
 }
 
@@ -29,6 +31,17 @@ void Game::Start()
 	{
 		cout << "Font error loaded" << endl;
 	}
+
+	vector<vector<Case*>> _allCases = map->Init();
+
+	for (vector<Case*>& _balls : _allCases)
+	{
+		for (Case* _ball : _balls)
+		{
+			drawables.push_back(_ball->GetShape());
+		}
+	}
+	
 }
 
 void Game::Update()
@@ -52,29 +65,34 @@ void Game::Update()
 			{
 				if (Mouse::isButtonPressed(Mouse::Button::Left))
 				{
-					Case* _case = map->Selection(Mouse::getPosition(), map->GetAllMap());
-					entitiesToSwap.push_back(_case);
+					case1ToSwap = map->Selection(Mouse::getPosition(), map->GetAllMap());
 				}
+
 			}
 			if (_event.type == Event::MouseButtonReleased)
 			{
-				Case* _case = map->Selection(Mouse::getPosition(), map->GetAllMap());
-				entitiesToSwap.push_back(_case);
+				case2ToSwap = map->Selection(Mouse::getPosition(), map->GetAllMap());
 
-				TryToSwap(entitiesToSwap);
+				TryToSwap(case1ToSwap, case2ToSwap);
 			}
+
 
 		}
 
 		window.clear();
 
 		window.draw(_sprite);
-		for (vector<Case*>& _balls : map->GetAllMap())
+		//for (vector<Case*>& _balls : map->GetAllMap())
+		//{
+		//	for (Case* _ball : _balls)
+		//	{
+		//		window.draw(*_ball->GetShape());
+		//	}
+		//}
+
+		for (const Drawable* _drawable : drawables)
 		{
-			for (Case* _ball : _balls)
-			{
-				window.draw(*_ball->GetShape());
-			}
+			window.draw(*_drawable);
 		}
 
 		window.display();
@@ -86,14 +104,15 @@ void Game::Stop()
 
 }
 
-void Game::TryToSwap(vector<Case*>& _entities)
+void Game::TryToSwap(Case* _case1, Case* _case2)
 {
-	if (map->notNullptr(_entities))
+	if (map->notNullptr(_case1,_case2))
 	{
-		if (map->isNear(_entities))
+		if (map->isNear(_case1, _case2))
 		{
-			map->Swap(_entities);
+			map->Swap(_case1, _case2);
 		}
 	}
-	_entities.clear();
+	_case1 = nullptr;
+	_case2 = nullptr;
 }

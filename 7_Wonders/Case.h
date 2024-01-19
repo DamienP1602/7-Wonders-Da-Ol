@@ -53,9 +53,11 @@ struct Case
 
 		entity->GetShape()->setOrigin(_size.x, _size.y);
 	}
-	void SetPosition(const Vector2f& _position)
+	void ChangeCase(Case*& _case)
 	{
-		position = _position;
+		position = _case->position;
+
+		ID = _case->ID;
 
 		entity->GetShape()->setPosition(position);
 	}

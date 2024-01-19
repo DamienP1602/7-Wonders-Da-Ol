@@ -43,31 +43,29 @@ Case* MapManager::Selection(const Vector2i _mousePosition, vector<vector<Case*>>
 	return nullptr;
 }
 
-bool MapManager::notNullptr(vector<Case*> _entities)
+bool MapManager::notNullptr(Case* _case1, Case* _case2)
 {
-	for (const Case* _entity : _entities)
-	{
-		if (_entity == nullptr) return false;
-		if (_entity->entity == nullptr) return false;
-	}
+	if (_case1 == nullptr || _case2 == nullptr) return false;
+	if (_case1->entity == nullptr || _case2->entity == nullptr) return false;
+
 	return true;
 }
 
-bool MapManager::isNear(vector<Case*> _entities)
+bool MapManager::isNear(Case* _case1, Case* _case2)
 {
-	return _entities[0]->ID == (_entities[1]->ID - 1) ||
-		_entities[0]->ID == (_entities[1]->ID + 1) ||
-		_entities[0]->ID == (_entities[1]->ID - 8) ||
-		_entities[0]->ID == (_entities[1]->ID + 8);
+	return _case1->ID == (_case2->ID - 1) ||
+		_case1->ID == (_case2->ID + 1) ||
+		_case1->ID == (_case2->ID - 8) ||
+		_case1->ID == (_case2->ID + 8);
 }
 
-void MapManager::Swap(vector<Case*>& _balls)
+void MapManager::Swap(Case* _case1, Case* _case2)
 {
-	Vector2f& _ball1 = _balls[0]->position;
-	Vector2f& _ball2 = _balls[1]->position;
+	Case _temp = *_case1;
+	Case* _tempPtr = &_temp;
 
-	_balls[0]->entity->GetShape()->setPosition(_ball2);
-	_balls[1]->entity->GetShape()->setPosition(_ball1);
+	_case1->ChangeCase(_case2);
+	_case2->ChangeCase(_tempPtr);
 
 
 }
