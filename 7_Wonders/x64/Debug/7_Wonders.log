@@ -1,4 +1,7 @@
-﻿  ClassicBall.cpp
+﻿  AlignmentReaction.cpp
+  ClassicBall.cpp
+  Entity.cpp
+  EntityManager.cpp
   MovementComponent.cpp
   SpecialBall.cpp
   Generating Code...

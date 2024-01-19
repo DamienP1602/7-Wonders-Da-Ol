@@ -54,10 +54,10 @@
     <ClCompile Include="MapManager.cpp">
       <Filter>Source Files\Managers</Filter>
     </ClCompile>
-    <ClCompile Include="CollisionComponent.cpp">
+    <ClCompile Include="MovementComponent.cpp">
       <Filter>Source Files\Components</Filter>
     </ClCompile>
-    <ClCompile Include="MovementComponent.cpp">
+    <ClCompile Include="AlignmentReaction.cpp">
       <Filter>Source Files\Components</Filter>
     </ClCompile>
   </ItemGroup>
@@ -86,14 +86,14 @@
     <ClInclude Include="EntityManager.h">
       <Filter>Source Files\Managers</Filter>
     </ClInclude>
-    <ClInclude Include="CollisionComponent.h">
-      <Filter>Source Files\Components</Filter>
-    </ClInclude>
     <ClInclude Include="MovementComponent.h">
       <Filter>Source Files\Components</Filter>
     </ClInclude>
     <ClInclude Include="Singleton.h">
       <Filter>Source Files\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="AlignmentReaction.h">
+      <Filter>Source Files\Components</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,5 +1,6 @@
 #pragma once
-#include "CollisionComponent.h"
+
+#include "AlignmentReaction.h"
 
 enum DirectionType
 {
@@ -16,21 +17,21 @@ struct DirectionData
 		type = DIRECTION_NONE;
 		direction = Vector2f();
 	}
-	DirectionData();
+	//DirectionData();
 };
 
 class MovementComponent
 {
 	float speed; //pour l'animation
-	DirectionData direction;
+	DirectionData directionData;
 	bool canMove;
 
 public:
 	MovementComponent();
 
 public:
-	void Move(CollisionComponent* _collision, Entity* _entity);
-	void TryToMove(CollisionComponent* _collision, Entity* _entity, const DirectionData& _direction);
+	void Move(AlignmentReaction* _alignment, Entity* _entity);
+	void TryToMove(AlignmentReaction* _alignment, Entity* _entity, const DirectionData& _direction);
 	void ToggleMove()
 	{
 		canMove = !canMove;

@@ -2,13 +2,10 @@
 #include "Entity.h"
 #include "InputManager.h"
 #include "MovementComponent.h"
-#include "CollisionComponent.h"
+#include "AlignmentReaction.h"
 
-class SpecialBall : public Entity, public InputManager
+class SpecialBall : public Entity
 {
-	MovementComponent* movement;
-	CollisionComponent* collision;
-
 public:
 	SpecialBall();
 	SpecialBall(CircleShape* _shape);
@@ -17,8 +14,6 @@ public:
 public:
 	void Move();
 
-public:
-	virtual void ExecuteCallback(Event _event) override;
 
 };
 

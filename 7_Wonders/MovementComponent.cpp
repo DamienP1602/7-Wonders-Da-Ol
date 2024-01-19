@@ -3,20 +3,26 @@
 MovementComponent::MovementComponent()
 {
 	speed = 0.02f;
-	direction = DIRECTION_NONE;
+	directionData = DirectionData();
 	canMove = false;
 }
 
-void MovementComponent::Move(CollisionComponent* _collision, Entity* _entity)
+void MovementComponent::Move(AlignmentReaction* _alignment, Entity* _entity)
 {
 	if (!canMove) return;
 
-	TryToMove(_collision, _entity, direction);
+	TryToMove(_alignment, _entity, directionData);
 }
 
-void MovementComponent::TryToMove(CollisionComponent* _collision, Entity* _entity, const DirectionData& _direction)
+void MovementComponent::TryToMove(AlignmentReaction* _alignment, Entity* _entity, const DirectionData& _directionData)
 {
-	const float _destination = _direction * speed;
+	const Vector2f& _destination = _directionData.direction * speed;
 
+	_entity->GetShape()->move(_destination);
+
+	if (true)
+	{
+
+	}
 
 }
