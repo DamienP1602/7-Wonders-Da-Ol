@@ -19,6 +19,11 @@ class Game
 	int goal;
 	Map* map;
 
+	Vector2f windowSize;
+	Texture* texture;
+
+	vector<Case*> entitiesToSwap;
+
 	vector<Drawable*> drawables;
 
 public:
@@ -29,5 +34,7 @@ public:
 	void Start();
 	void Update();
 	void Stop();
+
+	void TryToSwap(vector<Case*>& _entities);
 };
 

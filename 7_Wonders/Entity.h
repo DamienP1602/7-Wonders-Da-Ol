@@ -1,7 +1,9 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <iostream>
 
 using namespace sf;
+using namespace std;
 
 enum EntityType
 {
@@ -17,6 +19,7 @@ class Entity
 {
 	EntityType type;
 	ColorType color;
+	Texture* texture;
 
 protected:
 	Shape* shape;
@@ -40,6 +43,6 @@ public:
 
 public:
 	void SetColor();
-	void Move();
+	void SetTexture();
 };
 

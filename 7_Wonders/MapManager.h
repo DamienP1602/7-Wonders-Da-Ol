@@ -20,10 +20,14 @@ public:
 	MapManager(const float _x, const float _y);
 public:
 
-	void CreateGrid();
-
 	ColorType GetColorOnInt(const int _int) const;
 
 	Case* Selection(const Vector2i _mousePosition, vector<vector<Case*>> _allCases) const;
+
+	bool notNullptr(vector<Case*> _entities);
+
+	bool isNear(vector<Case*> _entities);
+
+	void Swap(vector<Case*>& _balls);
 };
 

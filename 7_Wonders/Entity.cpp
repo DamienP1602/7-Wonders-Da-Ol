@@ -5,6 +5,7 @@ Entity::Entity(const EntityType& _type)
 	type = _type;
 	shape = nullptr;
 	color = COLOR_NONE;
+	texture = new Texture();
 }
 
 Entity::Entity(const EntityType& _type, Shape* _shape, const ColorType& _color)
@@ -12,6 +13,7 @@ Entity::Entity(const EntityType& _type, Shape* _shape, const ColorType& _color)
 	type = _type;
 	shape = _shape;
 	color = _color;
+	texture = new Texture();
 }
 
 void Entity::SetColor()
@@ -22,7 +24,11 @@ void Entity::SetColor()
 	shape->setFillColor(_colors[_value]);
 }
 
-void Entity::Move()
+void Entity::SetTexture()
 {
-	//TODO
+	if (!texture->loadFromFile("Assets/T_Ball.png"))
+	{
+		cout << "Texture not loaded" << endl;
+	}
+	shape->setTexture(texture);
 }

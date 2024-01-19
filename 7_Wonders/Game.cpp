@@ -7,6 +7,11 @@ Game::Game()
 	score = int();
 	goal = int();
 	map = new Map();
+
+	texture = new Texture();
+
+	entitiesToSwap = vector<Case*>();
+	windowSize = Vector2f(1920.0f, 1080.0f);
 }
 
 Game::~Game()
@@ -16,15 +21,21 @@ Game::~Game()
 
 void Game::Start()
 {
-	Vector2f _windowSize(1920.0f, 1080.0f);
+	Vector2f _windowSize = windowSize;
+
 	window.create(VideoMode(static_cast<unsigned int>(_windowSize.x), static_cast<unsigned int>(_windowSize.y)), "7 Wonders");
 
+	if (!texture->loadFromFile("Assets/T_Font.png"))
+	{
+		cout << "Font error loaded" << endl;
+	}
 }
 
 void Game::Update()
 {
-	Case* _case1 = nullptr;
-	Case* _case2 = nullptr;
+	Sprite _sprite;
+	_sprite.setTextureRect(IntRect(0, -250, static_cast<int>(windowSize.x), static_cast<int>(windowSize.y)));
+	_sprite.setTexture(*texture);
 
 	while (window.isOpen())
 	{
@@ -41,22 +52,23 @@ void Game::Update()
 			{
 				if (Mouse::isButtonPressed(Mouse::Button::Left))
 				{
-					_case1 = map->Selection(Mouse::getPosition(),map->GetAllMap());
+					Case* _case = map->Selection(Mouse::getPosition(), map->GetAllMap());
+					entitiesToSwap.push_back(_case);
 				}
 			}
-
-		}
-
-		for (vector<Case*>& _balls : map->GetAllMap())
-		{
-			for (Case* _ball : _balls)
+			if (_event.type == Event::MouseButtonReleased)
 			{
-				_ball->entity->Move();
+				Case* _case = map->Selection(Mouse::getPosition(), map->GetAllMap());
+				entitiesToSwap.push_back(_case);
+
+				TryToSwap(entitiesToSwap);
 			}
+
 		}
 
 		window.clear();
 
+		window.draw(_sprite);
 		for (vector<Case*>& _balls : map->GetAllMap())
 		{
 			for (Case* _ball : _balls)
@@ -72,4 +84,16 @@ void Game::Update()
 void Game::Stop()
 {
 
+}
+
+void Game::TryToSwap(vector<Case*>& _entities)
+{
+	if (map->notNullptr(_entities))
+	{
+		if (map->isNear(_entities))
+		{
+			map->Swap(_entities);
+		}
+	}
+	_entities.clear();
 }
