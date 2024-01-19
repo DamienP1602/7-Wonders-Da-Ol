@@ -30,6 +30,6 @@ public:
 
 	void Swap(Case* _case1, Case* _case2);
 
-
+	void CheckCanFall(vector<vector<Case*>> _allCases);
 };
 

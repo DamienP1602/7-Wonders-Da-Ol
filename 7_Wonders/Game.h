@@ -37,5 +37,6 @@ public:
 	void Stop();
 
 	void TryToSwap(Case* _case1, Case* _case2);
+	void CheckCanFall();
 };
 

@@ -69,3 +69,21 @@ void MapManager::Swap(Case* _case1, Case* _case2)
 
 
 }
+
+void MapManager::CheckCanFall(vector<vector<Case*>> _allCases)
+{
+	for (int _indexY = 0; _indexY < static_cast<int>(GetX()) ; _indexY++)
+	{
+		for (int _indexX = 0; _indexX < static_cast<int>(GetY()); _indexX++)
+		{
+			if (_allCases[_indexY][_indexX]->ID > 56) return; // si je suis a la derniere ligne je ne fais pas tomber
+
+			if (_allCases[_indexY][_indexX]->entity == nullptr) // si la case est vide je fais tomber la case à 8 ID de moins
+			{
+				Vector2f _shapePosition = _allCases[_indexY - 1][_indexX]->GetShape()->getPosition();
+				_allCases[_indexY - 1][_indexX]->GetShape()->setPosition(Vector2f(_shapePosition.x, _shapePosition.y + 100.0f));
+			}
+		}
+
+	}
+}

@@ -82,13 +82,7 @@ void Game::Update()
 		window.clear();
 
 		window.draw(_sprite);
-		//for (vector<Case*>& _balls : map->GetAllMap())
-		//{
-		//	for (Case* _ball : _balls)
-		//	{
-		//		window.draw(*_ball->GetShape());
-		//	}
-		//}
+
 
 		for (const Drawable* _drawable : drawables)
 		{
