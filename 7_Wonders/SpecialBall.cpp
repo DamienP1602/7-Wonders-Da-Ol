@@ -17,7 +17,3 @@ SpecialBall::~SpecialBall()
 	delete shape;
 }
 
-void SpecialBall::Move()
-{
-	//TODO
-}

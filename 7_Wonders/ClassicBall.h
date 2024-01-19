@@ -11,7 +11,6 @@ public:
 
 
 public:
-	void Move();
 
 };
 

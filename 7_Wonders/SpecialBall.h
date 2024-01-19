@@ -12,7 +12,6 @@ public:
 	~SpecialBall();
 
 public:
-	void Move();
 
 
 };

@@ -146,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AlignmentReaction.h" />
+    <ClInclude Include="Case.h" />
     <ClInclude Include="ClassicBall.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="EntityManager.h" />

@@ -12,6 +12,8 @@ using namespace std;
 class Game
 {
 	RenderWindow window;
+	Vector2f windowSize;
+	Texture* texture;
 
 	int life;
 	int timer;

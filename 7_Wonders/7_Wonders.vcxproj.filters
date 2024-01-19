@@ -95,5 +95,8 @@
     <ClInclude Include="AlignmentReaction.h">
       <Filter>Source Files\Components</Filter>
     </ClInclude>
+    <ClInclude Include="Case.h">
+      <Filter>Source Files\Map</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -6,6 +6,8 @@ using namespace sf;
 
 int main()
 {
+	locale::global(locale(""));
+	srand(static_cast<unsigned int>(time(nullptr)));
 	Game _game;
 
 	_game.Start();
