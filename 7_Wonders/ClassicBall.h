@@ -1,13 +1,12 @@
 #pragma once
 #include "Entity.h"
-#include "InputManager.h"
 #include "MovementComponent.h"
-#include "CollisionComponent.h"
+#include "AlignmentReaction.h"
 
-class ClassicBall : public Entity, public InputManager
+class ClassicBall : public Entity
 {
 	MovementComponent* movement;
-	CollisionComponent* collision;
+	AlignmentReaction* collision;
 
 public:
 	ClassicBall();

@@ -6,7 +6,7 @@ ClassicBall::ClassicBall() : Entity(ENTITY_CLASSIC)
 
 	//TODO
 	movement = new MovementComponent();
-	collision = new CollisionComponent();
+	collision = new AlignmentReaction();
 }
 
 ClassicBall::ClassicBall(CircleShape* _shape) : Entity(ENTITY_CLASSIC)
@@ -15,7 +15,7 @@ ClassicBall::ClassicBall(CircleShape* _shape) : Entity(ENTITY_CLASSIC)
 
 
 	movement = new MovementComponent();
-	collision = new CollisionComponent();
+	collision = new AlignmentReaction();
 }
 
 ClassicBall::~ClassicBall()

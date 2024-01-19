@@ -23,6 +23,9 @@ void Game::Start()
 
 void Game::Update()
 {
+	Case* _case1 = nullptr;
+	Case* _case2 = nullptr;
+
 	while (window.isOpen())
 	{
 		// Gestion des inputs
@@ -34,22 +37,33 @@ void Game::Update()
 				window.close();
 			}
 
-			if (_event.type == Event::MouseMoved)
+			if (_event.type == Event::MouseButtonPressed)
 			{
-				/*cout << _event.mouseMove.x << endl;
-				cout << _event.mouseMove.y << endl;*/
+				if (Mouse::isButtonPressed(Mouse::Button::Left))
+				{
+					_case1 = map->Selection(Mouse::getPosition(),map->GetAllMap());
+				}
 			}
 
-			for (InputManager* _manager : inputManager)
+		}
+
+		for (vector<Case*>& _balls : map->GetAllMap())
+		{
+			for (Case* _ball : _balls)
 			{
-				_manager->ExecuteCallback(_event);
+				_ball->entity->Move();
 			}
 		}
 
-
 		window.clear();
 
-		//window.draw();
+		for (vector<Case*>& _balls : map->GetAllMap())
+		{
+			for (Case* _ball : _balls)
+			{
+				window.draw(*_ball->GetShape());
+			}
+		}
 
 		window.display();
 	}
