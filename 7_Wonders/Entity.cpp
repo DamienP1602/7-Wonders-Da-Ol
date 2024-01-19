@@ -6,6 +6,7 @@ Entity::Entity(const EntityType& _type)
 {
 	type = _type;
 	shape = nullptr;
+<<<<<<< Updated upstream
 	movement = new MovementComponent();
 	alignment = new AlignmentReaction();
 	color = COLOR_NONE;
@@ -19,6 +20,9 @@ Entity::Entity(const EntityType& _type, Shape* _shape)
 	movement = new MovementComponent();
 	alignment = new AlignmentReaction();
 	color = COLOR_NONE;
+=======
+	color = ColorType();
+>>>>>>> Stashed changes
 	texture = new Texture();
 }
 
