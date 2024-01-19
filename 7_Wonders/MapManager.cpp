@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-#include "MapManager.h"
-
-MapManager::MapManager(const float _x, const float _y)
-{
-	gridSizeX = _x;
-	gridSizeY = _y;
-}
-
-void MapManager::CreateGrid()
-{
-	//TODO
-}
-=======
 #include "MapManager.h"
 
 MapManager::MapManager()
@@ -48,4 +34,3 @@ Case* MapManager::Selection(const Vector2i _mousePosition, vector<vector<Case*>>
 	//TODO
 	return nullptr;
 }
->>>>>>> Damien-branch
