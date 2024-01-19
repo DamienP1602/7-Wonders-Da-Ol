@@ -40,5 +40,6 @@ public:
 
 public:
 	void SetColor();
+	void Move();
 };
 

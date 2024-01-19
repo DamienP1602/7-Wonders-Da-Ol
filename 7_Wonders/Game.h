@@ -5,7 +5,6 @@
 #include <iostream>
 
 #include "Map.h"
-#include "InputManager.h"
 
 using namespace sf;
 using namespace std;
@@ -21,7 +20,6 @@ class Game
 	Map* map;
 
 	vector<Drawable*> drawables;
-	vector<InputManager*> inputManager;
 
 public:
 	Game();

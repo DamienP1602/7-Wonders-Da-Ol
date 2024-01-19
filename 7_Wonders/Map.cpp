@@ -21,7 +21,7 @@ void Map::Init()
 		for (int _i2 = 0; _i2 < _gridY; _i2++)
 		{
 			_random = rand() % 4 + 0;
-			Case* _newCase = new Case(new Entity(ENTITY_CLASSIC, new CircleShape(10.0f), GetColorOnInt(_random)), Vector2f(_x, _y));
+			Case* _newCase = new Case(new Entity(ENTITY_CLASSIC, new CircleShape(40.0f), GetColorOnInt(_random)), Vector2f(_x, _y));
 			cases[_i].push_back(_newCase);
 			_x += 100.0f;
 		}

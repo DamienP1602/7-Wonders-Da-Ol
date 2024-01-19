@@ -1,13 +1,12 @@
 #pragma once
 #include "Entity.h"
-#include "InputManager.h"
 #include "MovementComponent.h"
-#include "CollisionComponent.h"
+#include "AlignmentReaction.h"
 
-class SpecialBall : public Entity, public InputManager
+class SpecialBall : public Entity
 {
 	MovementComponent* movement;
-	CollisionComponent* collision;
+	AlignmentReaction* collision;
 
 public:
 	SpecialBall();
@@ -18,7 +17,6 @@ public:
 	void Move();
 
 public:
-	virtual void ExecuteCallback(Event _event) override;
 
 };
 

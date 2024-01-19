@@ -17,7 +17,7 @@ void MapManager::CreateGrid()
 	//TODO
 }
 
-ColorType MapManager::GetColorOnInt(const int _int)
+ColorType MapManager::GetColorOnInt(const int _int) const
 {
 	ColorType _color[5] = { COLOR_RED,
 						COLOR_BLUE,
@@ -27,4 +27,10 @@ ColorType MapManager::GetColorOnInt(const int _int)
 	};
 	
 	return _color[_int];
+}
+
+Case* MapManager::Selection(const Vector2i _mousePosition, vector<vector<Case*>> _allCases) const
+{
+	//TODO
+	return nullptr;
 }

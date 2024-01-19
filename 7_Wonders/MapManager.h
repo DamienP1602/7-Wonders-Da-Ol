@@ -1,16 +1,12 @@
 #pragma once
-#include <SFML/Graphics.hpp>
-#include "Entity.h"
-
-using namespace sf;
-
+#include "Case.h"
 
 class MapManager
 {
 	float gridSizeX;
 	float gridSizeY;
 
-public:
+protected:
 	float GetX() const
 	{
 		return gridSizeX;
@@ -26,6 +22,8 @@ public:
 
 	void CreateGrid();
 
-	ColorType GetColorOnInt(const int _int);
+	ColorType GetColorOnInt(const int _int) const;
+
+	Case* Selection(const Vector2i _mousePosition, vector<vector<Case*>> _allCases) const;
 };
 

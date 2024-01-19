@@ -21,3 +21,8 @@ void Entity::SetColor()
 
 	shape->setFillColor(_colors[_value]);
 }
+
+void Entity::Move()
+{
+	//TODO
+}
