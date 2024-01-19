@@ -75,20 +75,11 @@ void Game::Update()
 
 				TryToSwap(case1ToSwap, case2ToSwap);
 			}
-
-
 		}
 
 		window.clear();
 
 		window.draw(_sprite);
-		//for (vector<Case*>& _balls : map->GetAllMap())
-		//{
-		//	for (Case* _ball : _balls)
-		//	{
-		//		window.draw(*_ball->GetShape());
-		//	}
-		//}
 
 		for (const Drawable* _drawable : drawables)
 		{
@@ -110,7 +101,7 @@ void Game::TryToSwap(Case* _case1, Case* _case2)
 	{
 		if (map->isNear(_case1, _case2))
 		{
-			map->Swap(_case1, _case2);
+			map->Swap(_case1, _case2, map->GetAllMap());
 		}
 	}
 	_case1 = nullptr;

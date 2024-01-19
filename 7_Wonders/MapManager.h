@@ -1,5 +1,6 @@
 #pragma once
 #include "Case.h"
+#include "AlignmentReaction.h"
 
 class MapManager
 {
@@ -28,8 +29,8 @@ public:
 
 	bool isNear(Case* _case1, Case* _case2);
 
-	void Swap(Case* _case1, Case* _case2);
+	void Swap(Case* _case1, Case* _case2, vector<vector<Case*>> _allCases);
 
-
+	void CheckCanFall(vector<vector<Case*>> _allCases);
 };
 

@@ -4,7 +4,7 @@ Entity::Entity(const EntityType& _type)
 {
 	type = _type;
 	shape = nullptr;
-	color = ColorType();
+	color = COLOR_WHITE;
 	texture = new Texture();
 }
 
